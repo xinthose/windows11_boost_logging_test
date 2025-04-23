@@ -23,11 +23,12 @@ include_directories(
 )
 
 # Add the executable
-add_executable(BoostLoggingExample main.cpp)
+add_executable(BoostLoggingExample
+    main.cpp
+)
 
 # Link Boost libraries
-target_link_libraries(
-    BoostLoggingExample 
+target_link_libraries(BoostLoggingExample 
     ${Boost_LIBRARIES}
     ${Boost_LOG_LIBRARY}
     ${Boost_LOG_SETUP_LIBRARY}
