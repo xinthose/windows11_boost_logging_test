@@ -6,14 +6,29 @@ project(BoostLoggingExample)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+set(BOOST_ROOT C:/boost)
+
 # Find Boost
-find_package(Boost REQUIRED COMPONENTS log)
+find_package(
+    Boost 
+    REQUIRED 
+    COMPONENTS 
+    log 
+    log_setup
+)
 
 # Include Boost headers
-include_directories(${Boost_INCLUDE_DIRS})
+include_directories(
+    C:/boost/include/boost_1_87_0
+)
 
 # Add the executable
 add_executable(BoostLoggingExample main.cpp)
 
 # Link Boost libraries
-target_link_libraries(BoostLoggingExample ${Boost_LIBRARIES})
+target_link_libraries(
+    BoostLoggingExample 
+    ${Boost_LIBRARIES}
+    ${Boost_LOG_LIBRARY}
+    ${Boost_LOG_SETUP_LIBRARY}
+)
