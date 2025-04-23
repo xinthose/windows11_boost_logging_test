@@ -27,6 +27,11 @@ add_executable(BoostLoggingExample
     main.cpp
 )
 
+target_compile_definitions(BoostLoggingExample PUBLIC
+    _WIN32_WINNT=0x0A00
+    # <https://learn.microsoft.com/en-us/cpp/porting/modifying-winver-and-win32-winnt?view=msvc-170>
+)
+
 # Link Boost libraries
 target_link_libraries(BoostLoggingExample 
     ${Boost_LIBRARIES}
